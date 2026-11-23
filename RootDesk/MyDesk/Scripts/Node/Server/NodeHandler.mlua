@@ -1,0 +1,24 @@
+@Component
+script NodeHandler extends Component
+    property boolean IsInit = false
+    property table Nodes = {}
+
+    @ExecSpace("ServerOnly")
+    method void Init()
+        if self.IsInit then return end
+
+        self.IsInit = true
+    end
+
+    @ExecSpace("ServerOnly")
+    method void Revert(table toRevert)
+        if self.IsInit then return end
+
+        self.IsInit = true
+    end
+
+    @ExecSpace("Client")
+    method void BroadcastNode(string userId, string nodes)
+
+    end
+end
